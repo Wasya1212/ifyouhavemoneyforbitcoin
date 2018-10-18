@@ -12,7 +12,7 @@ const bodyParser = require('koa-bodyparser');
 const app = new Koa();
 const router = new Router();
 
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 let getBitcoin = time => {
   return new Promise((resolve, reject) => {
