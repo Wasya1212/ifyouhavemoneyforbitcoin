@@ -26,7 +26,7 @@ const parser = require('json-parser');
 
 router.get('/', async (ctx, next) => {
   ctx.type = 'html';
-  ctx.body = fs.createReadStream(path.resolve(__dirname, 'index.html'));
+  ctx.body = fs.createReadStream(path.resolve(__dirname, 'client/build/index.html'));
   await next();
 });
 
