@@ -1,0 +1,61 @@
+body
+  overflow-x: hidden
+  width: 100vw
+  min-height: 100vh
+  margin: 0
+  padding: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+
+a
+  display: block
+  height: inherit
+  width: auto
+  color: inherit
+  text-decoration: none
+  &[nohref]
+    cursor: pointer
+
+@import "./variables"
+
+@import "./partials/header"
+@import "./partials/footer"
+
+@import "./modules/crypto-status"
+@import "./modules/modal"
+@import "./modules/trade"
+
+@import "./theme/highcharts.sass"
+
+@import "./style.sass"
+
+#root
+  min-height: 100vh
+  width: 100%
+  background-color: $additional-bg-color
+
+.btn
+  border-radius: 5px
+  padding: .5rem .75rem
+  border: 1px solid darken($btn-bg-color, 30%)
+  background-color: $btn-bg-color
+  color: $btn-text-color
+  font-weight: bold
+  transition: .25s all ease-in-out
+  outline: none
+  &:hover
+    color: $btn-additional-text-color
+    cursor: pointer
+    background-color: $btn-additional-bg-color
+    border-color: darken($btn-additional-bg-color, 30%)
+
+.bitcoin
+  &::after
+    content: '₿'
+    margin-left: 1ch
+
+.dolar
+  &::after
+    content: '$'
+    margin-left: 1ch

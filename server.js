@@ -8,11 +8,12 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const serve = require('koa-static');
 const bodyParser = require('koa-bodyparser');
+const cors = require('@koa/cors');
 
 const app = new Koa();
 const router = new Router();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 let getBitcoin = time => {
   return new Promise((resolve, reject) => {
@@ -46,7 +47,8 @@ app.use(async (ctx, next) => {
   ctx.set('X-Response-Time', `${ms}ms`);
 });
 
-app.use(serve(path.resolve(__dirname, 'public')));
+app.use(cors());
+app.use(serve(path.resolve(__dirname, 'client/build')));
 app.use(bodyParser());
 app.use(router.routes());
 

@@ -1,0 +1,19 @@
+@import "./variables"
+
+.highcharts-series-group
+  path:first-child
+    stroke: $additional-bg-color
+
+.highcharts-markers
+  path
+    fill: $main-bg-color
+
+.highcharts-tooltip
+  text
+    tspan:nth-child(2)
+      fill: $main-text-color !important
+
+.highcharts-legend-item
+  path
+    fill: $main-bg-color
+    stroke: $main-bg-color

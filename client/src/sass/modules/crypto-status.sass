@@ -1,0 +1,24 @@
+@import "./variables"
+
+.App-crypto
+  padding: 1rem
+  &__user-profit
+    font-size: 30px
+    font-weight: bold
+    color: $additional-text-color
+    margin-right: 1rem
+    strong
+      color: $main-text-color
+      box-shadow: 0px 3px 0 $main-text-color
+  *
+    display: inline-block
+
+.grow-vector
+  user-select: none
+  font-size: 40px
+  font-weight: bold
+  text-shadow: 0px 0px 5px #{$main-bg-color}
+  &-up
+    color: green
+  &-down
+    color: red
